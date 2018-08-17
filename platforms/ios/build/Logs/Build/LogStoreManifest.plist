@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>CFB510EB-111D-4137-B974-F97A6E179632</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>CFB510EB-111D-4137-B974-F97A6E179632.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>WeexDemo project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>WeexDemo</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning workspace WeexDemo with scheme WeexDemo and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>556173370.47651803</real>
+			<key>timeStoppedRecording</key>
+			<real>556173370.67850494</real>
+			<key>title</key>
+			<string>Cleaning workspace WeexDemo with scheme WeexDemo and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>CFB510EB-111D-4137-B974-F97A6E179632</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
