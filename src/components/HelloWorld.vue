@@ -1,5 +1,7 @@
 <template>
-  <text class="message">{{ count }}</text>
+  <text class="message">
+    Qui ci saranno tutte le news
+  </text>
 </template>
 <script>
 const stream = weex.requireModule('stream')

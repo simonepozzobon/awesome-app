@@ -7,6 +7,7 @@ import ItsMonday from '@/components/ItsMonday'
 Vue.use(Router)
 
 module.exports = new Router({
+  mode: 'abstract',
   routes: [
     {
       path: '/',

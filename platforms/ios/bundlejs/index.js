@@ -62,27 +62,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/*global Vue*/
-
-/* weex initialized here, please do not move this line */
-var router = __webpack_require__(1);
-var App = __webpack_require__(10);
-/* eslint-disable no-new */
-new Vue(Vue.util.extend({ el: '#root', router: router }, App));
-router.push('/');
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -96,11 +80,11 @@ var _HelloWorld = __webpack_require__(3);
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
 
-var _ItsFriday = __webpack_require__(14);
+var _ItsFriday = __webpack_require__(6);
 
 var _ItsFriday2 = _interopRequireDefault(_ItsFriday);
 
-var _ItsMonday = __webpack_require__(6);
+var _ItsMonday = __webpack_require__(10);
 
 var _ItsMonday2 = _interopRequireDefault(_ItsMonday);
 
@@ -110,6 +94,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Vue.use(_vueRouter2.default);
 
 module.exports = new _vueRouter2.default({
+  mode: 'abstract',
   routes: [{
     path: '/',
     name: 'HelloWorld',
@@ -124,6 +109,26 @@ module.exports = new _vueRouter2.default({
     component: _ItsFriday2.default
   }]
 });
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*global Vue*/
+
+/* weex initialized here, please do not move this line */
+var router = __webpack_require__(0);
+var App = __webpack_require__(14);
+/* eslint-disable no-new */
+new Vue(Vue.util.extend({
+  el: '#root',
+  router: router
+}, App));
+// router.push('/');
+router.push({ name: 'ItsMonday' });
 
 /***/ }),
 /* 2 */
@@ -2808,6 +2813,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 var stream = weex.requireModule('stream');
 
@@ -2843,7 +2850,7 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('text', {
     staticClass: ["message"]
-  }, [_vm._v(_vm._s(_vm.count))])
+  }, [_vm._v("\n  Qui ci saranno tutte le news\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -2874,10 +2881,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/esse/awesome-app/src/components/ItsMonday.vue"
+__vue_options__.__file = "/Users/esse/awesome-app/src/components/ItsFriday.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-7802b850"
+__vue_options__._scopeId = "data-v-69380eb2"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -2915,7 +2922,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-    name: 'ItsMonday'
+    name: 'ItsFriday'
 
 };
 
@@ -2926,7 +2933,7 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('text', [_vm._v("It's Monday")])])
+  return _c('div', [_c('text', [_vm._v("It's Friday")])])
 }]}
 module.exports.render._withStripped = true
 
@@ -2957,10 +2964,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/esse/awesome-app/src/index.vue"
+__vue_options__.__file = "/Users/esse/awesome-app/src/components/ItsMonday.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-2964abc9"
+__vue_options__._scopeId = "data-v-7802b850"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -2979,36 +2986,21 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
-  "wrapper": {
-    "justifyContent": "space-between",
-    "alignItems": "center",
-    "backgroundImage": "linear-gradient(to bottom, rgb(201, 219, 228) 0%, rgb(246, 235, 228) 100%)"
-  },
-  "top-bar": {
-    "width": 100,
+  "page-container": {
     "flexDirection": "row",
-    "justifyContent": "flex-end",
-    "backgroundColor": "rgb(247,249,250)"
-  },
-  "bottom-bar": {
-    "width": 100,
-    "flexDirection": "row",
-    "justifyContent": "space-around",
-    "backgroundColor": "rgb(247,249,250)"
-  },
-  "nav-icon": {
-    "width": 33,
     "justifyContent": "center",
-    "alignItems": "center"
+    "maxWidth": 100
   },
-  "icon": {
-    "fontFamily": "Ionicons",
-    "fontSize": "64",
-    "color": "rgb(37,37,37)",
-    "paddingTop": "32",
-    "paddingRight": "32",
-    "paddingBottom": "32",
-    "paddingLeft": "32"
+  "general-list": {
+    "flexDirection": "row",
+    "justifyContent": "center",
+    "width": "600",
+    "height": 800
+  },
+  "post-list-single": {
+    "width": "600",
+    "height": "300",
+    "backgroundColor": "#ffffff"
   }
 }
 
@@ -3020,7 +3012,7 @@ module.exports = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 //
 //
@@ -3039,39 +3031,49 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-var domModule = weex.requireModule('dom');
+var stream = weex.requireModule('stream');
 
 exports.default = {
-  name: 'App',
-  data: function data() {
-    return {
-      ico: {
-        profile: '\uF419',
-        home: '\uF448',
-        sad: '\uF4D7',
-        happy: '\uF31C'
-      }
-    };
-  },
-  beforeCreated: function beforeCreated() {
-    domModule.addRule('fontFace', {
-      'fontFamily': "Ionicons",
-      'src': "url('https://github.com/AnandChowdhary/ionicons-3-cdn/blob/master/ionicons.ttf?raw=true')"
-    });
-  },
-  mounted: function mounted() {}
+    name: 'ItsMonday',
+    data: function data() {
+        return {
+            base: 'http://shortology.ml',
+            message: '',
+            message2: '',
+            posts: [],
+            url: 'http://shortology.ml/api/app/monday'
+        };
+    },
+    computed: {},
+    methods: {
+        getFullUrl: function getFullUrl(url) {
+            return this.base + url;
+        }
+    },
+    created: function created() {
+        var _this = this;
+
+        stream.fetch({
+            method: 'GET',
+            url: this.url,
+            type: 'jsonp'
+        }, function (ret) {
+            if (ret.ok) {
+                _this.message = 'Successo' + JSON.stringify(ret.data);
+                for (var i = 0; i < ret.data.length; i++) {
+                    var item = ret.data[i];
+                    item.img = base + ret.data[i].img;
+                    _this.posts[i] = item;
+                    console.log(item);
+                }
+            } else {
+                _this.message = 'Fallita' + JSON.stringify(ret.data);
+            }
+        }, function (response) {
+            _this.message2 = response;
+        });
+    }
 };
 
 /***/ }),
@@ -3080,42 +3082,21 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_c('div', {
-    staticClass: ["top-bar"]
-  }, [_c('div', {
-    staticClass: ["nav-icon"]
-  }, [_c('text', {
-    staticClass: ["icon"]
-  }, [_vm._v(_vm._s(_vm.ico.profile))])])]), _c('router-view'), _c('div', {
-    staticClass: ["bottom-bar"]
-  }, [_c('div', {
-    staticClass: ["nav-icon"]
-  }, [_c('router-link', {
-    attrs: {
-      "to": "/"
-    }
-  }, [_c('image', {
-    attrs: {
-      "src": "https://cdn2.iconfinder.com/data/icons/pittogrammi/142/65-512.png"
-    }
-  })])], 1), _c('div', {
-    staticClass: ["nav-icon"]
-  }, [_c('router-link', {
-    attrs: {
-      "to": "/its-monday"
-    }
-  }, [_c('text', {
-    staticClass: ["icon"]
-  }, [_vm._v(_vm._s(_vm.ico.sad))])])], 1), _c('div', {
-    staticClass: ["nav-icon"]
-  }, [_c('router-link', {
-    attrs: {
-      "to": "/its-friday"
-    }
-  }, [_c('text', {
-    staticClass: ["icon"]
-  }, [_vm._v(_vm._s(_vm.ico.happy))])])], 1)])], 1)
+    staticClass: ["page-container"]
+  }, [_c('list', {
+    staticClass: ["general-list"]
+  }, _vm._l((this.posts), function(post) {
+    return _c('cell', {
+      key: post.id,
+      staticClass: ["item-single"],
+      appendAsTree: true,
+      attrs: {
+        "append": "tree"
+      }
+    }, [_c('div', {
+      staticClass: ["post-single"]
+    }, [_c('text', [_vm._v(_vm._s(post.img))])])])
+  }))])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3146,10 +3127,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/esse/awesome-app/src/components/ItsFriday.vue"
+__vue_options__.__file = "/Users/esse/awesome-app/src/index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-69380eb2"
+__vue_options__._scopeId = "data-v-2964abc9"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -3167,7 +3148,57 @@ module.exports = __vue_exports__
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = {}
+module.exports = {
+  "wrapper": {
+    "justifyContent": "space-between",
+    "alignItems": "center",
+    "backgroundImage": "linear-gradient(to bottom, rgb(201, 219, 228) 0%, rgb(246, 235, 228) 100%)"
+  },
+  "top-bar": {
+    "flexDirection": "row",
+    "justifyContent": "space-between",
+    "backgroundColor": "rgb(247,249,250)",
+    "paddingTop": "64",
+    "paddingBottom": "64",
+    "paddingRight": "64",
+    "paddingLeft": "64",
+    "position": "fixed",
+    "top": 0,
+    "left": 0,
+    "right": 0
+  },
+  "bottom-bar": {
+    "flexDirection": "row",
+    "justifyContent": "space-between",
+    "alignSelf": "stretch",
+    "backgroundColor": "#FF0000",
+    "paddingBottom": "96",
+    "paddingTop": "64",
+    "paddingRight": "64",
+    "paddingLeft": "64",
+    "position": "fixed",
+    "bottom": 0,
+    "left": 0,
+    "right": 0
+  },
+  "main-template": {
+    "marginTop": "224"
+  },
+  "nav-icon": {
+    "width": "32",
+    "justifyContent": "center",
+    "alignItems": "center"
+  },
+  "icon": {
+    "color": "rgb(37,37,37)",
+    "width": "64",
+    "height": "64"
+  },
+  "brand": {
+    "width": "114",
+    "height": "77"
+  }
+}
 
 /***/ }),
 /* 16 */
@@ -3179,26 +3210,124 @@ module.exports = {}
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
-//
-//
-//
+
+var _router = __webpack_require__(0);
+
+var _router2 = _interopRequireDefault(_router);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-    name: 'ItsFriday'
-
-};
+    name: 'App',
+    data: function data() {
+        return {};
+    },
+    methods: {
+        goTo: function goTo(event, route) {
+            console.log(event, route);
+            _router2.default.push(route);
+        }
+    },
+    beforeCreated: function beforeCreated() {},
+    mounted: function mounted() {}
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 17 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_vm._m(0), _c('div', {
+    staticClass: ["main-template"]
+  }, [_c('router-view')], 1), _c('div', {
+    staticClass: ["bottom-bar"]
+  }, [_c('div', {
+    staticClass: ["nav-icon"]
+  }, [_c('image', {
+    staticClass: ["icon"],
+    attrs: {
+      "src": "http://shortology.ml/images/icons/Home.png"
+    },
+    on: {
+      "click": function($event) {
+        _vm.goTo($event, '/')
+      }
+    }
+  })]), _c('div', {
+    staticClass: ["nav-icon"]
+  }, [_c('image', {
+    staticClass: ["icon"],
+    attrs: {
+      "src": "http://shortology.ml/images/icons/Monday.png"
+    },
+    on: {
+      "click": function($event) {
+        _vm.goTo($event, {
+          name: 'ItsMonday'
+        })
+      }
+    }
+  })]), _c('div', {
+    staticClass: ["nav-icon"]
+  }, [_c('image', {
+    staticClass: ["icon"],
+    attrs: {
+      "src": "http://shortology.ml/images/icons/Friday.png"
+    },
+    on: {
+      "click": function($event) {
+        _vm.goTo($event, {
+          name: 'ItsFriday'
+        })
+      }
+    }
+  })])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('text', [_vm._v("It's Friday")])])
+  return _c('div', {
+    staticClass: ["top-bar"]
+  }, [_c('div', {
+    staticClass: ["logo"]
+  }, [_c('image', {
+    staticClass: ["brand"],
+    attrs: {
+      "src": "http://shortology.ml/images/icons/Logo.png"
+    }
+  })]), _c('div', {
+    staticClass: ["nav-icon"]
+  }, [_c('image', {
+    staticClass: ["icon"],
+    attrs: {
+      "src": "http://shortology.ml/images/icons/Profile.png"
+    }
+  })])])
 }]}
 module.exports.render._withStripped = true
 

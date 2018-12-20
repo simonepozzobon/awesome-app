@@ -1,5 +1,5 @@
 source 'git@github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '11.0'
 #inhibit_all_warnings!
 
 def common
@@ -7,6 +7,7 @@ def common
     pod 'WeexPluginLoader'
     pod 'SDWebImage', '3.7.5'
     pod 'SocketRocket', '0.4.2'
+    pod 'WXDevtool', '0.15.3', :configurations => ['Debug']
 end
 
 target 'WeexDemo' do

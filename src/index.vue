@@ -1,88 +1,106 @@
 <template>
-  <div class="wrapper">
+<div class="wrapper">
     <div class="top-bar">
-      <div class="nav-icon">
-        <text class="icon">{{ ico.profile }}</text>
-      </div>
+        <div class="logo">
+            <image class="brand" src="http://shortology.ml/images/icons/Logo.png"></image>
+        </div>
+        <div class="nav-icon">
+            <image class="icon" src="http://shortology.ml/images/icons/Profile.png"></image>
+        </div>
     </div>
-    <router-view/>
+    <div class="main-template">
+        <router-view></router-view>
+    </div>
     <div class="bottom-bar">
-      <div class="nav-icon">
-        <router-link to="/">
-          <image src="https://cdn2.iconfinder.com/data/icons/pittogrammi/142/65-512.png"></image>
-        </router-link>
-      </div>
-      <div class="nav-icon">
-        <router-link to="/its-monday">
-          <text class="icon">{{ ico.sad }}</text>
-        </router-link>
-      </div>
-      <div class="nav-icon">
-        <router-link to="/its-friday">
-          <text class="icon">{{ ico.happy }}</text>
-        </router-link>
-      </div>
+        <div class="nav-icon">
+            <image @click="goTo($event, '/')" class="icon" src="http://shortology.ml/images/icons/Home.png"></image>
+        </div>
+        <div class="nav-icon">
+            <image @click="goTo($event, { name: 'ItsMonday' })" class="icon" src="http://shortology.ml/images/icons/Monday.png"></image>
+        </div>
+        <div class="nav-icon">
+            <image @click="goTo($event, { name: 'ItsFriday' })" class="icon" src="http://shortology.ml/images/icons/Friday.png"></image>
+        </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
-const domModule = weex.requireModule('dom')
+import router from './router'
 
 export default {
-  name: 'App',
-  data () {
-    return {
-      ico: {
-        profile: '\uf419',
-        home: '\uf448',
-        sad: '\uf4d7',
-        happy: '\uf31c',
-      }
+    name: 'App',
+    data: function() {
+        return {
+        }
+    },
+    methods: {
+        goTo: function(event, route) {
+            console.log(event, route)
+            router.push(route)
+        }
+    },
+    beforeCreated: function() {
+    },
+    mounted: function() {
     }
-  },
-  beforeCreated () {
-    domModule.addRule('fontFace', {
-        'fontFamily': "Ionicons",
-        'src': "url('https://github.com/AnandChowdhary/ionicons-3-cdn/blob/master/ionicons.ttf?raw=true')"
-    })
-  },
-  mounted () {
-  }
 }
 </script>
 
 <style scoped>
-  .wrapper {
+.wrapper {
     justify-content: space-between;
     align-items: center;
     background-image: linear-gradient(to bottom, rgb(201, 219, 228) 0%, rgb(246, 235, 228) 100%);
-  }
+}
 
-  .top-bar {
-    width: 100;
+.top-bar {
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     background-color: rgb(247, 249, 250);
-  }
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-right: 64px;
+    padding-left: 64px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 
-  .bottom-bar {
-    width: 100;
+.bottom-bar {
     flex-direction: row;
-    justify-content: space-around;
-    background-color: rgb(247, 249, 250);
-  }
+    justify-content: space-between;
+    align-self: stretch;
+    background-color: red;
+    padding-bottom: 96px;
+    padding-top: 64px;
+    padding-right: 64px;
+    padding-left: 64px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
-  .nav-icon {
-    width: 33;
+.main-template {
+    margin-top: 224px;
+}
+
+.nav-icon {
+    width: 32px;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .icon {
-    font-family: Ionicons;
-    font-size: 64px;
+.icon {
     color: rgb(37, 37, 37);
-    padding: 32px;
-  }
+    width: 64px;
+    height: 64px;
+}
+
+.brand {
+    width: 114px;
+    height: 77px;
+}
 </style>

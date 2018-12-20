@@ -4,6 +4,11 @@
 const router = require('./router');
 const App = require('@/index.vue');
 /* eslint-disable no-new */
-new Vue(Vue.util.extend({el: '#root', router}, App));
-router.push('/');
-
+new Vue(Vue.util.extend(
+  {
+    el: '#root',
+    router
+  }, App)
+);
+// router.push('/');
+router.push({ name: 'ItsMonday' });
